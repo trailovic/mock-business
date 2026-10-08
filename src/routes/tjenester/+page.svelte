@@ -1,0 +1,3 @@
+<script lang="ts">import Seo from '$lib/components/Seo.svelte';import ServiceCards from '$lib/components/ServiceCards.svelte';import Cta from '$lib/components/Cta.svelte';</script>
+<Seo title="Tjenester" description="Utforsk regnskap, lønn og økonomisk rådgivning i vår fiktive bedriftsdemo." />
+<section class="wrap py-16 sm:py-24"><p class="eyebrow mb-6">Våre tjenester</p><h1 class="heading max-w-3xl">Riktig hjelp.<br />Der du trenger den.</h1><p class="mb-12 mt-7 max-w-2xl text-lg leading-relaxed text-muted">Noen trenger hjelp med hele regnskapet. Andre ønsker en samtalepartner underveis. Vi tar utgangspunkt i bedriften din.</p><ServiceCards /></section><Cta />
