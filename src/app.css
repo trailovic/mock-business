@@ -1,23 +1,50 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @theme {
   --color-paper: #f7f7f0;
   --color-ink: #193d35;
   --color-muted: #52655d;
   --color-lime: #e2edbd;
-  --font-sans: "Inter", "Arial", sans-serif;
+  --font-sans: 'Inter', 'Arial', sans-serif;
 }
 @layer base {
-  body { @apply bg-paper text-ink antialiased; }
-  button, input, textarea, select { font: inherit; }
-  button { cursor: pointer; }
-  :focus-visible { outline: 3px solid #547226; outline-offset: 5px; }
-  ::selection { background: #e2edbd; color: #193d35; }
+  body {
+    @apply bg-paper text-ink antialiased;
+  }
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+  button {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 3px solid #547226;
+    outline-offset: 5px;
+  }
+  ::selection {
+    background: #e2edbd;
+    color: #193d35;
+  }
 }
 @layer components {
-  .wrap { @apply mx-auto max-w-7xl px-6 sm:px-10 lg:px-16; }
-  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.18em]; }
-  .button { @apply inline-flex items-center justify-center gap-6 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#30594e]; }
-  .button-light { @apply inline-flex items-center justify-center gap-6 rounded-full bg-lime px-7 py-4 text-sm font-semibold text-ink transition-colors hover:bg-white; }
-  .heading { @apply text-4xl font-medium leading-[1.1] tracking-[-0.045em] sm:text-5xl lg:text-6xl; }
-  .field { @apply mt-2 w-full rounded-xl border border-ink/25 bg-white p-4 text-ink; }
+  .wrap {
+    @apply mx-auto max-w-7xl px-6 sm:px-10 lg:px-16;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em];
+  }
+  .button {
+    @apply inline-flex items-center justify-center gap-6 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-[#30594e];
+  }
+  .button-light {
+    @apply inline-flex items-center justify-center gap-6 rounded-full bg-lime px-7 py-4 text-sm font-semibold text-ink transition-colors hover:bg-white;
+  }
+  .heading {
+    @apply text-4xl font-medium leading-[1.1] tracking-[-0.045em] sm:text-5xl lg:text-6xl;
+  }
+  .field {
+    @apply mt-2 w-full rounded-xl border border-ink/25 bg-white p-4 text-ink;
+  }
 }

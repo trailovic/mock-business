@@ -37,21 +37,22 @@ Vite prints the local URL, normally http://localhost:5173. Keep that terminal ru
 
 ## Where to edit
 
-| File | Purpose |
-| --- | --- |
-| `src/lib/config/site.ts` | Brand, description, navigation, demo flag |
-| `src/lib/data/services.ts` | Service names, copy, slugs, detail-page content |
-| `src/app.css` | Tailwind theme tokens and shared button/layout styles |
-| `src/lib/components/` | Header, footer, SEO, service cards, CTA |
-| `src/routes/+page.svelte` | Homepage content and layout |
-| `src/routes/om-oss/+page.svelte` | Company story and values |
-| `src/routes/kontakt/+page.svelte` | Demo contact form |
+| File                              | Purpose                                               |
+| --------------------------------- | ----------------------------------------------------- |
+| `src/lib/config/site.ts`          | Brand, description, navigation, demo flag             |
+| `src/lib/data/services.ts`        | Service names, copy, slugs, detail-page content       |
+| `src/app.css`                     | Tailwind theme tokens and shared button/layout styles |
+| `src/lib/components/`             | Header, footer, SEO, service cards, CTA               |
+| `src/routes/+page.svelte`         | Homepage content and layout                           |
+| `src/routes/om-oss/+page.svelte`  | Company story and values                              |
+| `src/routes/kontakt/+page.svelte` | Demo contact form                                     |
 
 Page copy is Norwegian Bokmål. Page-specific text is intentionally in its page component; service content is centralized. The small header descriptor and favicon should also be updated when changing industries. Two locally hosted AI-generated editorial images and three stock photographs are included; no external image or font services are required. See `docs/imagery.md` for provenance and replacement instructions.
 
 ## Validation and preview
 
 ```bash
+npm run format:check
 npm run check
 npm run build
 npm run preview -- --open
@@ -87,3 +88,13 @@ git push -u origin HEAD
 ```
 
 Review the pull request before merging. After it is merged, switch to main and pull before starting the next feature branch. Avoid deleting your local feature branch until you have confirmed all work is preserved on main (squash merges may need manual verification).
+
+## Code organization and formatting
+
+- `src/routes/` composes each page and owns route-specific content.
+- `src/lib/components/home/` contains the homepage hero, services, partner and process sections.
+- `src/lib/components/ContactForm.svelte` owns demo form fields and state.
+- `src/lib/data/process.ts` and `values.ts` hold repeated company content; `services.ts` holds service content.
+- Shared components remain in `src/lib/components/`. Keep single-use markup in its page unless extracting it makes the page easier to read.
+
+Run `npm run format` after editing. Prettier formats Svelte, TypeScript, CSS, JSON, Markdown and workflow files with two-space indentation. CI runs `npm run format:check` to keep formatting consistent. Generated files, bundled images and the lockfile are excluded.
