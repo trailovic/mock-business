@@ -1,1 +1,10 @@
-<script lang="ts">import { page } from '$app/state';</script><svelte:head><title>{page.status} – Klar Regnskap</title></svelte:head><section class="wrap py-24"><p class="eyebrow mb-6">{page.status}</p><h1 class="heading">{page.status === 404 ? 'Denne siden finnes ikke.' : 'Noe gikk galt.'}</h1><a class="button mt-8" href="/">Til forsiden →</a></section>
+<script lang="ts">
+  import { page } from '$app/state';
+</script>
+
+<svelte:head><title>{page.status} – Klar Regnskap</title></svelte:head>
+<section class="wrap py-24">
+  <p class="eyebrow mb-6">{page.status}</p>
+  <h1 class="heading">{page.status === 404 ? 'Denne siden finnes ikke.' : 'Noe gikk galt.'}</h1>
+  <a class="button mt-8" href="/">Til forsiden →</a>
+</section>
