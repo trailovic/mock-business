@@ -47,7 +47,7 @@ Vite prints the local URL, normally http://localhost:5173. Keep that terminal ru
 | `src/routes/om-oss/+page.svelte` | Company story and values |
 | `src/routes/kontakt/+page.svelte` | Demo contact form |
 
-Page copy is Norwegian Bokmål. Page-specific text is intentionally in its page component; service content is centralized. The small header descriptor and favicon should also be updated when changing industries. No stock images or external font services are required.
+Page copy is Norwegian Bokmål. Page-specific text is intentionally in its page component; service content is centralized. The small header descriptor and favicon should also be updated when changing industries. Two locally hosted AI-generated editorial images are included; no external image or font services are required. See `docs/imagery.md` for provenance and replacement instructions.
 
 ## Validation and preview
 
