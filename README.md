@@ -9,7 +9,7 @@ Install Node.js 22.12 or newer (Node 22 LTS recommended) and Git. Then:
 ```bash
 git clone https://github.com/trailovic/mock-business.git
 cd mock-business
-git switch --track origin/feature/accounting-foundation
+git switch main
 npm ci
 npm run dev -- --open
 ```
@@ -18,12 +18,12 @@ If already cloned, run `git status` first and commit or stash your work before c
 
 ```bash
 git fetch origin
-git switch --track origin/feature/accounting-foundation
+git switch main
 npm ci
 npm run dev -- --open
 ```
 
-If the branch already exists locally, use `git switch feature/accounting-foundation`, then `git pull --ff-only`.
+After switching to main in an existing clone, run `git pull --ff-only` to get the merged website.
 
 Vite prints the local URL, normally http://localhost:5173. Keep that terminal running; Ctrl+C stops it. Edit in your editor (for example `code .` in a second terminal) and the browser updates automatically.
 
@@ -47,7 +47,7 @@ Vite prints the local URL, normally http://localhost:5173. Keep that terminal ru
 | `src/routes/om-oss/+page.svelte` | Company story and values |
 | `src/routes/kontakt/+page.svelte` | Demo contact form |
 
-Page copy is Norwegian Bokmål. Page-specific text is intentionally in its page component; service content is centralized. The small header descriptor and favicon should also be updated when changing industries. Two locally hosted AI-generated editorial images are included; no external image or font services are required. See `docs/imagery.md` for provenance and replacement instructions.
+Page copy is Norwegian Bokmål. Page-specific text is intentionally in its page component; service content is centralized. The small header descriptor and favicon should also be updated when changing industries. Two locally hosted AI-generated editorial images and three stock photographs are included; no external image or font services are required. See `docs/imagery.md` for provenance and replacement instructions.
 
 ## Validation and preview
 
@@ -74,13 +74,16 @@ The form does not send requests, emails, or store data. Test only with fictional
 
 No tracking or analytics is included. This is a visual and structural foundation, not a live accounting business.
 
-## Working on the branch
+## Starting the next change
 
 ```bash
+git switch main
+git pull --ff-only
+git switch -c feature/your-next-change
 git status
 git add src README.md
 git commit -m "feat: refine accounting website"
-git push
+git push -u origin HEAD
 ```
 
 Review the pull request before merging. After it is merged, switch to main and pull before starting the next feature branch. Avoid deleting your local feature branch until you have confirmed all work is preserved on main (squash merges may need manual verification).
